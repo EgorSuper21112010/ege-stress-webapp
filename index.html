@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>Ударения — тренажёр</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div class="brand">🎯 Ударения</div>
+      <div class="level-chip" id="levelPill">Уровень 1 из 10</div>
+    </header>
+
+    <div class="content">
+      <main id="gameScreen" class="screen">
+        <div class="word-box" id="wordBox"></div>
+
+        <div class="feedback" id="feedback">
+          Нажми на букву, на которую падает ударение.
+        </div>
+
+        <div class="progress-wrap">
+          <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+          <div class="progress-label" id="progressLabel">0 / 0 слов выучено</div>
+        </div>
+      </main>
+
+      <main id="levelUpScreen" class="screen hidden">
+        <div class="levelup-card">
+          <div class="levelup-emoji">🎉</div>
+          <div class="levelup-title">Уровень <span id="levelUpFrom"></span> пройден!</div>
+          <div class="levelup-sub">Все слова этого уровня выучены</div>
+          <button id="nextLevelBtn" class="primary-btn">Дальше → уровень <span id="levelUpTo"></span></button>
+        </div>
+      </main>
+
+      <main id="allDoneScreen" class="screen hidden">
+        <div class="levelup-card">
+          <div class="levelup-emoji">🏆</div>
+          <div class="levelup-title">Все 10 уровней пройдены!</div>
+          <div class="levelup-sub">Ты выучил(а) все слова из словника. Можно пройтись ещё раз на повторение.</div>
+          <button id="restartBtn" class="primary-btn">Начать заново</button>
+        </div>
+      </main>
+
+      <main id="levelsScreen" class="screen hidden">
+        <div class="levels-grid" id="levelsGrid"></div>
+      </main>
+    </div>
+
+    <nav class="tabbar">
+      <button class="tab-btn" data-tab="game">
+        <span class="tab-icon">🎯</span>
+        <span class="tab-label">Тренировка</span>
+      </button>
+      <button class="tab-btn" data-tab="levels">
+        <span class="tab-icon">🏆</span>
+        <span class="tab-label">Уровни</span>
+      </button>
+    </nav>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
